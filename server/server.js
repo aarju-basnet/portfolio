@@ -14,13 +14,9 @@ server.use(cors({
 server.use(express.json());
 
 server.use("/api/contact", contactRoutes);
-
-server.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    error: "API Route Not Found"
-  });
-});
+server.get('/', (req,res)=>{
+    res.send('server is live')
+})
 
 const PORT = process.env.PORT
 
