@@ -1,0 +1,886 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased selection:bg-blue-500/30;
+  }
+}
+
+/* MARQUEE */
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 18s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 640px) {
+  .about-image {
+    width: 320px;
+    height: 250px;
+  }
+
+  .rotating-circle {
+    width: 120px;
+    height: 120px;
+    right: 10px;
+  }
+
+  .circle-emoji {
+    font-size: 1.8rem;
+  }
+
+  .about-title {
+    font-size: 2.3rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+  .about-section {
+    padding: 6rem 2rem;
+  }
+
+  .about-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+
+  .about-image {
+    width: 370px;
+    height: 260px;
+  }
+
+  .about-content {
+    text-align: left;
+  }
+
+  .about-title {
+    font-size: 2.7rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .contact-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .contact-input,
+  .contact-textarea,
+  .contact-button {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 2.5rem 1rem;
+  background: #f5f5f5;
+  color: black;
+  border-top: 1px solid #e4e4e7;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #3f3f46;
+  word-break: break-word;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 640px) {
+  .footer {
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 3.5rem 2rem;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  .hero-socials {
+    justify-content: flex-start;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-image {
+    width: 290px;
+    height: 290px;
+  }
+
+  .hero-tech-stack {
+    width: 70%;
+  }
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 767px) {
+
+  nav {
+    width: 100%;
+  }
+
+  nav .max-w-6xl {
+    padding: 1rem 1rem !important;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* BRAND */
+  nav h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* LINKS */
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem !important;
+    width: 100%;
+    padding: 0;
+  }
+
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+@media (max-width: 767px) {
+
+  /* SECTION */
+  #projects {
+    padding: 5rem 1rem !important;
+  }
+
+  /* TITLE */
+  #projects h2 {
+    font-size: 2rem !important;
+    margin-bottom: 4rem !important;
+  }
+
+  /* PROJECT GRID */
+  #projects .grid.md\:grid-cols-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4rem !important;
+  }
+
+  /* CONTENT */
+  #projects h3 {
+    font-size: 2rem !important;
+    text-align: center;
+  }
+
+  #projects p {
+    text-align: center;
+  }
+
+  /* TECH STACK */
+  #projects .flex.flex-wrap.gap-6 {
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+
+  /* BUTTONS */
+  #projects .border-t {
+    justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 1.5rem !important;
+  }
+
+  /* =========================
+     IMAGE BLOCK
+  ========================= */
+
+  #projects .relative.w-\[460px\] {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 240px !important;
+    margin: auto;
+    transform: translateY(0px) !important;
+  }
+
+  /* IMAGE SIZE */
+  #projects img.rounded-2xl {
+    width: 190px !important;
+    border-radius: 18px !important;
+  }
+
+  /* IMAGE POSITIONS */
+  #projects img.top-0 {
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  #projects img.top-9 {
+    top: 35px !important;
+    left: 55px !important;
+  }
+
+  #projects img.top-20 {
+    top: 70px !important;
+    left: 110px !important;
+  }
+
+  /* DESCRIPTION */
+  #projects .text-gray-600.leading-relaxed {
+    font-size: 0.95rem !important;
+    line-height: 1.8 !important;
+  }
+
+  /* FEATURED TEXT */
+  #projects .text-sm.text-blue-600 {
+    text-align: center !important;
+    display: block;
+  }
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+@media (max-width: 767px) {
+
+  /* SECTION */
+  section.py-20 {
+    padding: 4rem 1rem !important;
+  }
+
+  /* TITLE */
+  section.py-20 h2 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* SKILLS WRAPPER */
+  section.py-20 .flex.flex-wrap {
+    justify-content: center !important;
+    gap: 0.8rem !important;
+  }
+
+  /* SKILL TAG */
+  section.py-20 .rounded-full {
+    padding: 0.7rem 1.1rem !important;
+    font-size: 0.85rem !important;
+    text-align: center;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE FIXES FOR HERO ===== */
+
+/* Section padding adjustment */
+@media (max-width: 768px) {
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Main container spacing */
+@media (max-width: 768px) {
+  .max-w-4xl {
+    gap: 2rem !important;
+  }
+}
+
+/* Stack layout tighter on mobile */
+@media (max-width: 768px) {
+  .md\:flex-row {
+    flex-direction: column !important;
+  }
+
+  .md\:gap-10 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* TEXT adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+    text-align: center !important;
+  }
+
+  p {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Social icons center alignment */
+@media (max-width: 768px) {
+  .md\:justify-start {
+    justify-content: center !important;
+  }
+}
+
+/* IMAGE sizing for small screens */
+@media (max-width: 768px) {
+  .w-60,
+  .md\:w-72,
+  .h-60,
+  .md\:h-72 {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* Tech stack scroll width fix */
+@media (max-width: 768px) {
+  .w-\[80\%\] {
+    width: 95% !important;
+  }
+
+  .md\:w-\[70\%\] {
+    width: 95% !important;
+  }
+}
+
+/* Reduce marquee icon spacing on mobile */
+@media (max-width: 768px) {
+  .marquee-track img {
+    width: 22px !important;
+    margin: 0 10px !important;
+  }
+}
+
+/* Prevent overflow issues */
+@media (max-width: 768px) {
+  section {
+    overflow-x: hidden !important;
+  }
+}
+
+/* ===== MOBILE NAVBAR RESPONSIVE FIX ===== */
+
+/* Reduce padding on small screens */
+@media (max-width: 768px) {
+  nav .max-w-6xl {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* Brand text sizing */
+@media (max-width: 768px) {
+  nav h1 {
+    font-size: 1rem !important;
+  }
+}
+
+/* Hide desktop links on mobile */
+@media (max-width: 768px) {
+  nav ul {
+    display: none !important;
+  }
+}
+
+/* Optional: make navbar more compact */
+@media (max-width: 768px) {
+  nav .py-4 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+/* Improve blur readability on mobile */
+@media (max-width: 768px) {
+  nav {
+    backdrop-filter: blur(14px) !important;
+  }
+}
+
+/* ===== PROJECTS SECTION MOBILE RESPONSIVE ===== */
+
+/* Section padding fix */
+@media (max-width: 768px) {
+  section#projects {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Title sizing */
+@media (max-width: 768px) {
+  section#projects h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+/* Grid becomes stacked */
+@media (max-width: 768px) {
+  .grid.md\:grid-cols-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Content alignment */
+@media (max-width: 768px) {
+  section#projects h3 {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  section#projects p {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Featured label */
+@media (max-width: 768px) {
+  section#projects .text-sm {
+    text-align: center !important;
+    display: block !important;
+  }
+}
+
+/* TECH STACK mobile fix */
+@media (max-width: 768px) {
+  section#projects .flex.flex-wrap {
+    justify-content: center !important;
+    gap: 18px !important;
+  }
+
+  section#projects .text-\[10px\] {
+    font-size: 9px !important;
+  }
+}
+
+/* IMAGE STACK FIX (VERY IMPORTANT) */
+@media (max-width: 768px) {
+  section#projects .relative.w-\[460px\],
+  section#projects .md\:w-\[560px\] {
+    width: 100% !important;
+    height: 220px !important;
+    transform: none !important;
+  }
+
+  section#projects img {
+    width: 200px !important;
+  }
+
+  section#projects .top-0 {
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  section#projects .top-9 {
+    top: 20px !important;
+    left: 30px !important;
+  }
+
+  section#projects .top-20 {
+    top: 40px !important;
+    left: 60px !important;
+  }
+}
+
+/* BUTTON LINKS */
+@media (max-width: 768px) {
+  section#projects .flex.gap-6 {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Prevent horizontal overflow */
+@media (max-width: 768px) {
+  section#projects {
+    overflow-x: hidden !important;
+  }
+}
+
+/* ===== ABOUT SECTION MOBILE RESPONSIVE ===== */
+
+/* Section spacing */
+@media (max-width: 768px) {
+  section#about {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Grid becomes stacked */
+@media (max-width: 768px) {
+  section#about .grid.md\:grid-cols-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+  }
+}
+
+/* RIGHT TEXT CENTER ALIGN */
+@media (max-width: 768px) {
+  section#about h2 {
+    font-size: 1.6rem !important;
+    text-align: center !important;
+  }
+
+  section#about p {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+
+  section#about .text-sm {
+    text-align: center !important;
+    display: block !important;
+  }
+}
+
+/* LEFT IMAGE resize */
+@media (max-width: 768px) {
+  section#about img {
+    width: 260px !important;
+    height: 200px !important;
+  }
+}
+
+/* ROTATING CIRCLE FIX (IMPORTANT) */
+@media (max-width: 768px) {
+  section#about .absolute.-bottom-12 {
+    width: 110px !important;
+    height: 110px !important;
+    bottom: -30px !important;
+    right: 0 !important;
+  }
+
+  section#about svg {
+    font-size: 6px !important;
+  }
+
+  section#about .text-2xl {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* CENTER IMAGE BLOCK */
+@media (max-width: 768px) {
+  section#about .relative.flex {
+    justify-content: center !important;
+  }
+}
+
+/* Prevent overflow */
+@media (max-width: 768px) {
+  section#about {
+    overflow-x: hidden !important;
+  }
+}
+
+/* ===== HERO MOBILE RESPONSIVE FIX ===== */
+
+/* FIX: navbar overlap (main issue you mentioned) */
+@media (max-width: 768px) {
+  section {
+    padding-top: 90px !important;
+  }
+}
+
+/* Reduce vertical spacing on mobile */
+@media (max-width: 768px) {
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* STACK layout spacing */
+@media (max-width: 768px) {
+  section .max-w-4xl {
+    gap: 1.5rem !important;
+  }
+}
+
+/* TEXT CENTER + SIZE FIX */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+  }
+
+  p {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* SOCIAL ICONS CENTER */
+@media (max-width: 768px) {
+  .flex.justify-center.md\:justify-start {
+    justify-content: center !important;
+  }
+}
+
+/* IMAGE SIZE FIX */
+@media (max-width: 768px) {
+  .w-60,
+  .md\:w-72,
+  .h-60,
+  .md\:h-72 {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* GLow effect adjustment (avoid overflow on mobile) */
+@media (max-width: 768px) {
+  .blur-3xl {
+    opacity: 0.5 !important;
+    transform: scale(0.8) !important;
+  }
+}
+
+/* TECH STACK container */
+@media (max-width: 768px) {
+  .w-\[80\%\] {
+    width: 95% !important;
+  }
+
+  .md\:w-\[70\%\] {
+    width: 95% !important;
+  }
+}
+
+/* TECH ICONS smaller */
+@media (max-width: 768px) {
+  .marquee-track img {
+    width: 20px !important;
+    margin: 0 10px !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+@media (max-width: 768px) {
+  section {
+    overflow-x: hidden !important;
+  }
+}
+
+/* =========================
+   PROJECTS MOBILE FIX
+   ========================= */
+
+/* SECTION spacing */
+@media (max-width: 768px) {
+  section#projects {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+/* GRID becomes stacked */
+@media (max-width: 768px) {
+  section#projects .grid.md\:grid-cols-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+  }
+}
+
+/* TEXT center */
+@media (max-width: 768px) {
+  section#projects h3,
+  section#projects p {
+    text-align: center !important;
+  }
+}
+
+/* =========================
+   🔥 FIX IMAGE VISIBILITY ISSUE
+   ========================= */
+
+@media (max-width: 768px) {
+  section#projects .relative {
+    width: 100% !important;
+    height: 260px !important;
+    transform: none !important;
+    position: relative !important;
+  }
+
+  section#projects img {
+    width: 180px !important;
+    height: auto !important;
+    border-radius: 16px !important;
+  }
+}
+
+/* STACK IMAGES PROPERLY ON MOBILE */
+@media (max-width: 768px) {
+  section#projects .top-0 {
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  section#projects .top-9 {
+    top: 40px !important;
+    left: 40px !important;
+  }
+
+  section#projects .top-20 {
+    top: 80px !important;
+    left: 80px !important;
+  }
+}
+
+/* TECH STACK CENTER */
+@media (max-width: 768px) {
+  section#projects .flex.flex-wrap {
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+}
+
+/* LINKS CENTER */
+@media (max-width: 768px) {
+  section#projects .flex.gap-6 {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* PREVENT OVERFLOW */
+@media (max-width: 768px) {
+  section#projects {
+    overflow-x: hidden !important;
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+    filter: blur(35px);
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.6;
+    filter: blur(55px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+    filter: blur(35px);
+  }
+}
+
+/* MAIN GLOW */
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.55) 0%,
+    rgba(99, 102, 241, 0.25) 40%,
+    transparent 70%
+  );
+  border-radius: 9999px;
+  animation: glowPulse 3.8s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* SOFT OUTER AURA */
+.glow-soft {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.25),
+    transparent 70%
+  );
+  border-radius: 9999px;
+  filter: blur(30px);
+  animation: glowPulse 5s ease-in-out infinite;
+  z-index: 0;
+}
