@@ -3,7 +3,7 @@ import { supabase } from "../config/supabase.js";
 export const handleContactForm = async (req, res) => {
   const { name, email, message } = req.body;
 
-  // 1. Validation
+  // 1. Validation FIRST
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
@@ -11,8 +11,32 @@ export const handleContactForm = async (req, res) => {
     });
   }
 
+  // 2. CREATE KEY HERE (THIS IS THE CORRECT PLACE)
+  const key = `${req.ip}-${email.toLowerCase()}`;
+
   try {
-    // 2. Insert into Supabase
+    // 3. RATE LIMIT CHECK USING KEY
+    const { data: blocked } = await supabase
+      .from("rate_limits")
+      .select("*")
+      .eq("key", key)
+      .single();
+
+    const now = new Date();
+
+    if (blocked) {
+      const last = new Date(blocked.last_request);
+      const diff = now - last;
+
+      if (diff < 60 * 1000) {
+        return res.status(429).json({
+          success: false,
+          error: "Please wait before sending another message.",
+        });
+      }
+    }
+
+    // 4. INSERT INTO SUPABASE
     const { data, error } = await supabase
       .from("portfolio")
       .insert([
@@ -23,7 +47,6 @@ export const handleContactForm = async (req, res) => {
         },
       ]);
 
-    // 3. REAL ERROR CHECK
     if (error) {
       console.error("❌ SUPABASE ERROR:", error);
 
@@ -33,10 +56,16 @@ export const handleContactForm = async (req, res) => {
       });
     }
 
-    // 4. Debug log (IMPORTANT)
+    // 5. UPDATE RATE LIMIT TABLE USING SAME KEY
+    await supabase
+      .from("rate_limits")
+      .upsert({
+        key: key,
+        last_request: new Date(),
+      });
+
     console.log("✅ INSERT RESULT:", data);
 
-    // 5. Final response ONLY if insert succeeded
     return res.status(201).json({
       success: true,
       message: "Message stored successfully!",
