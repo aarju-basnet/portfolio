@@ -30,7 +30,7 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
       ],
       images: ["/rentease4.png", "/rentease1.png", '/rentease3.png'],
       code: rentEaseCode,
-      demo: rentEaseDemo,
+     // demo: rentEaseDemo,
     },
     {
       title: "Sathi",
@@ -63,7 +63,7 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
       ],
       images: ["/signup.png", "/chat2.png", "/verifyemail.png"],
       code: airaCode,
-      demo: airaDemo,
+      //demo: airaDemo,
     },
     
   ];
