@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import contactRoutes from "./routes/contactRoutes.js";
-import { globalLimiter } from "./middleware/rateLimiter.js";
+import { globalLimiter } from "./middleware/ratelimiter.js";
 
 
 dotenv.config();

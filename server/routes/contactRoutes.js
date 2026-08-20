@@ -1,6 +1,6 @@
 import express from "express";
 import { handleContactForm } from "../controller/contactCOntroller.js";
-import { contactLimiter } from "../middleware/rateLimiter.js";
+import { contactLimiter } from "../middleware/ratelimiter.js";
 
 const router = express.Router();
 
