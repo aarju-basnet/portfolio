@@ -15,7 +15,7 @@ export const globalLimiter = rateLimit({
 // 2. Strict limiter for contact form (BOT KILLER)
 export const contactLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
-  max: 3, // only 3 requests per minute per IP
+  max: 1, // only 1 requests per minute per IP
   message: {
     success: false,
     error: "Too many messages. Please wait a minute.",

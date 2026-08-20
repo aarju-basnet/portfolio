@@ -30,7 +30,7 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
       ],
       images: ["/rentease4.png", "/rentease1.png", '/rentease3.png'],
       code: rentEaseCode,
-     // demo: rentEaseDemo,
+      demo: rentEaseDemo,
     },
     {
       title: "Sathi",
@@ -63,7 +63,7 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
       ],
       images: ["/signup.png", "/chat2.png", "/verifyemail.png"],
       code: airaCode,
-      //demo: airaDemo,
+      demo: airaDemo,
     },
     
   ];
@@ -102,15 +102,14 @@ function ImageBlock({ p }) {
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex justify-center"
+      className="flex justify-center items-center"
     >
-      {/* Bigger card */}
-      <div className="relative w-[460px] md:w-[560px] h-[200px] md:h-[200px] -translate-y-8 md:-translate-y-14">
+      <div className="relative w-[460px] md:w-[560px] h-[380px] md:h-[440px]">
         {p.images.map((img, idx) => {
           const positions = [
-            "top-0 left-0",
-            "top-9 left-16",
-            "top-20 left-32",
+            "top-0 left-0 z-10",
+            "top-20 left-24 z-20",
+            "top-40 left-48 z-30",
           ];
 
           return (

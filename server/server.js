@@ -6,6 +6,8 @@ import { globalLimiter } from "./middleware/rateLimiter.js";
 
 
 dotenv.config();
+   console.log("FRONTEND_URL:", process.env.FRONTEND_URL);
+
 
 const server = express();
 
@@ -23,5 +25,5 @@ server.get('/', (req,res)=>{
 const PORT = process.env.PORT
 
 server.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(` Server running on port ${PORT}`);
 });

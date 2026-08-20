@@ -85,10 +85,17 @@ export default function About() {
           </h2>
 
           <p className="text-gray-600 leading-relaxed">
-            As a BSc CSIT student and developer, I specialize in building scalable backend systems using Node.js and the MERN stack. I enjoy creating clean APIs, real-time applications, and solving real-world problems through code.
-            <br /><br />
-            I am passionate about continuous learning, improving system design skills, and collaborating with global teams to deliver impactful digital products.
-          </p>
+  I'm a final-year BSc CSIT student and full-stack developer specializing in
+  backend systems with Node.js, Express, and TypeScript, backed by PostgreSQL,
+  MongoDB, and Redis. I focus on designing clean, scalable APIs and real-time
+  applications that solve real problems — not just ones that work, but ones
+  built to last.
+  <br /><br />
+  Beyond writing code, I care about system design, clean architecture, and
+  understanding the "why" behind every technical decision. I'm always looking
+  to grow through challenging projects and collaborate with teams who value
+  thoughtful engineering over quick fixes.
+</p>
         </motion.div>
 
       </div>

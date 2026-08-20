@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 
 const skillsData = [
   { name: "Node.js & Express", percentage: 90, level: "Expert" },
-  { name: "MongoDB", percentage: 85, level: "Advanced" },
+  { name: "MongoDB", percentage: 80, level: "Advanced" },
   { name: "React.js", percentage: 40, level: "Basic" },
   { name: "JavaScript (ES6+)", percentage: 80, level: "Expert" },
   { name: "Docker", percentage: 60, level: "Intermediate" },
+  { name: "Typescript", percentage: 70, level: "Advance" },
+  { name: "Postgresql", percentage: 70, level: "Advance" },
+  
 ];
 
 export function SkillsProficiency() {
