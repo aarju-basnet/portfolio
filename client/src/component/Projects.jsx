@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { SiReact, SiMongodb, SiExpress, SiSocketdotio, SiLeaflet, SiTailwindcss, SiNodedotjs, SiCss
-  , SiJsonwebtokens, SiAxios, SiCodesandbox, SiPostgresql, SiOpenai , SiMaildotru, SiSupabase,
-  SiSocket, SiTypescript, SiRedis, SiPrisma
+import { SiReact, SiMongodb, SiExpress,  SiTailwindcss, SiNodedotjs, SiCss
+  , SiJsonwebtokens,  SiPostgresql, SiOpenai , SiMaildotru, SiSupabase,
+   SiTypescript, SiRedis, SiPrisma
 } from "react-icons/si";
 
 export default function Projects() {
