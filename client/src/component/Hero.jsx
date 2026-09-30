@@ -23,11 +23,11 @@ const github = import.meta.env.VITE_GITHUB_URL;
             className="text-center md:text-left max-w-md"
           >
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Backend Engineer👋
+              Fullstack developer👋
             </h1>
 
             <p className="text-gray-600 mt-4 max-w-sm mx-auto md:mx-0">
-              Hi, I’m Aarju Basnet. I build scalable backend systems and modern web apps with clean architecture.
+              Hi, I’m Aarju Basnet. I build scalable systems and modern web apps with clean architecture.
             </p>
 
             {/* SOCIAL */}

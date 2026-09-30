@@ -2,17 +2,38 @@ import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { SiReact, SiMongodb, SiExpress, SiSocketdotio, SiLeaflet, SiTailwindcss, SiNodedotjs, SiCss
   , SiJsonwebtokens, SiAxios, SiCodesandbox, SiPostgresql, SiOpenai , SiMaildotru, SiSupabase,
-  SiSocket
+  SiSocket, SiTypescript, SiRedis, SiPrisma
 } from "react-icons/si";
 
 export default function Projects() {
+console.log(import.meta.env.VITE_RELAY_CODE, import.meta.env.VITE_RELAY_DEMO);
+const relayCode = import.meta.env.VITE_RELAY_CODE;
+const relayDemo = import.meta.env.VITE_RELAY_DEMO;
 const rentEaseCode = import.meta.env.VITE_RENTEASE_CODE;
 const rentEaseDemo = import.meta.env.VITE_RENTEASE_DEMO;
-const sathiCode = import.meta.env.VITE_SATHI_CODE;
-const sathiDemo = import.meta.env.VITE_SATHI_DEMO;
+
 const airaCode = import.meta.env.VITE_AIRA_CODE;
 const airaDemo = import.meta.env.VITE_AIRA_DEMO;
   const projects = [
+    {
+      title: "Relay",
+      desc: "Relay is a SaaS platform that lets businesses embed a lightweight widget on their website and get real-time analytics, a shared team inbox, and AI-generated summaries in one place. Organizations can invite team members, manage API keys, and track customer activity through a clean developer dashboard. Built with a multi-tenant architecture, secure authentication with 2FA, and Nepal-ready billing through eSewa and Khalti, Relay is designed to be practical for growing businesses.",
+      tech: [
+        { name: "React", icon: <SiReact className="text-blue-500" /> },
+        { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
+        { name: "Nodejs", icon: <SiNodedotjs className="text-green-500" /> },
+        { name: "Expressjs", icon: <SiExpress className="text-gray-800" /> },
+        { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" /> },
+        { name: "Prisma", icon: <SiPrisma className="text-gray-800" /> },
+        { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+        { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+        { name: "OpenRouter", icon: <SiOpenai className="text-purple-500" /> },
+        { name: "Brevo", icon: <SiMaildotru className="text-cyan-500" /> },
+      ],
+      video: "/relay_web.mp4",
+      code: relayCode,
+      demo: relayDemo,
+    },
     {
       title: "RentEase",
       desc: "RentEase is a modern rental platform designed to simplify the process of renting properties(Rooms,Appartments etc) by connecting owners and customers on a single, seamless platform, check real-time availability, and make bookings with ease. The platform focuses on improving the traditional rental experience by introducing a structured booking flow, transparent availability management, and a smooth user interface. It helps  owners manage their listings while giving customers a fast and reliable way to find and rent properties. Built with scalability and performance in mind, RentEase ensures a smooth experience for both renters and owners through a clean design and optimized backend architecture." , 
@@ -28,26 +49,11 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
          { name: "Supabase", icon: <SiSupabase className="text-green-500" /> },
 
       ],
-      images: ["/rentease4.png", "/rentease1.png", '/rentease3.png'],
+      video: "/rentease_web.mp4",
       code: rentEaseCode,
       demo: rentEaseDemo,
     },
-    {
-      title: "Sathi",
-      desc: " Sathi is a real-time location sharing app designed to help people stay connected with the ones who matter most. Whether you're meeting friends, tracking family members for safety, or coordinating group travel, Sathi makes location sharing simple, fast, and reliable. With live map updates and secure sharing controls, users can share their real-time location with trusted contacts in just a few taps. Built with a focus on privacy, performance, and ease of use, Sathi ensures you always know where your people are—when it matters the most.",
-      tech: [
-        { name: "React", icon: <SiReact className="text-blue-500" /> },
-        { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-500" /> },
-        { name: "Express", icon: <SiExpress className="text-gray-800" /> },
-        { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-        { name: "Nodejs", icon: <SiNodedotjs className="text-green-500" /> },
-        { name: "Socket.IO", icon: <SiSocketdotio className="text-black-500" /> },
-         { name: "Leflet", icon: <SiLeaflet className="text-green-800" /> },
-      ],
-      images: ["/sathi.png", "/sathi1.png"],
-       code: sathiCode,
-       demo: sathiDemo,
-    },
+    
     {
       title: "AIRA",
       desc: "AIRA is an intelligent, AI-powered assistant designed to simplify everyday life through smart conversations, automation, and helpful guidance. Built to understand user needs in a natural way, AIRA helps with productivity, learning, problem-solving, and quick decision-making—all in one place. Whether it’s answering questions, generating ideas, organizing tasks, or assisting in development workflows, AIRA adapts to the user’s context and delivers fast, meaningful support. More than just a tool, AIRA is built to feel like a reliable digital companion that enhances focus, efficiency, and creativity in daily life.",
@@ -61,7 +67,7 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
          { name: "Jsonwebtoken", icon: <SiJsonwebtokens className="text-black-500" /> },
          { name: "Brevo", icon: <SiMaildotru className="text-cyan-500" /> },
       ],
-      images: ["/signup.png", "/chat2.png", "/verifyemail.png"],
+      video: "/aira_web.mp4",
       code: airaCode,
       demo: airaDemo,
     },
@@ -79,11 +85,11 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
               {i % 2 === 0 ? (
                 <>
                   <ContentBlock p={p} />
-                  <ImageBlock p={p} />
+                  <VideoBlock p={p} />
                 </>
               ) : (
                 <>
-                  <ImageBlock p={p} />
+                  <VideoBlock p={p} />
                   <ContentBlock p={p} />
                 </>
               )}
@@ -96,7 +102,7 @@ const airaDemo = import.meta.env.VITE_AIRA_DEMO;
 }
 
 
-function ImageBlock({ p }) {
+function VideoBlock({ p }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -104,32 +110,16 @@ function ImageBlock({ p }) {
       transition={{ duration: 0.8 }}
       className="flex justify-center items-center"
     >
-      <div className="relative w-[460px] md:w-[560px] h-[380px] md:h-[440px]">
-        {p.images.map((img, idx) => {
-          const positions = [
-            "top-0 left-0 z-10",
-            "top-20 left-24 z-20",
-            "top-40 left-48 z-30",
-          ];
-
-          return (
-            <img
-              key={idx}
-              src={img}
-              className={`
-                absolute
-                rounded-2xl
-                shadow-xl
-                border border-white/70
-                w-[280px] md:w-[360px]
-                transition-all duration-300
-                hover:scale-105 hover:z-50
-                ${positions[idx]}
-              `}
-            />
-          );
-        })}
-      </div>
+     <video
+  src={p.video}
+  controls
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  className="w-full max-w-[560px] rounded-2xl shadow-xl border border-white/70"
+/>
     </motion.div>
   );
 }
